@@ -83,9 +83,9 @@ int computeHeight(Node* current) const {
     return 1 + (leftHeight > rightHeight ? leftHeight : rightHeight);
   }
 
-public:
+ public:
   BST() : top(nullptr) {}
- ~BST() {
+  ~BST() {
     deleteAll(top);
   }
 
