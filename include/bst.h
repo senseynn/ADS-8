@@ -51,7 +51,7 @@ void collectData(Node* current,
     collectData(current->right, buffer);
   }
 
- void deleteAll(Node* current) {
+void deleteAll(Node* current) {
     if (current == nullptr) {
       return;
     }
@@ -60,7 +60,7 @@ void collectData(Node* current,
     delete current;
   }
 
- int findCount(Node* current, const T& value) const {
+int findCount(Node* current, const T& value) const {
     if (current == nullptr) {
       return 0;
     }
@@ -83,7 +83,7 @@ int computeHeight(Node* current) const {
     return 1 + (leftHeight > rightHeight ? leftHeight : rightHeight);
   }
 
- public:
+public:
   BST() : top(nullptr) {}
  ~BST() {
     deleteAll(top);
@@ -93,7 +93,7 @@ void insert(const T& value) {
     top = connect(top, value);
   }
 
- int depth() const {
+int depth() const {
     return computeHeight(top);
   }
 
