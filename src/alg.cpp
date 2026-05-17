@@ -1,12 +1,13 @@
 // Copyright 2021 NNTU-CS
 #include <algorithm>
-#include <utility>
-#include <vector>
 #include <cctype>
 #include <fstream>
-#include <string>
-#include "bst.h"
 #include <iostream>
+#include <string>
+#include <utility>
+#include <vector>
+#include "bst.h"
+
 
 bool isEnglish(char s);
 char con_to_low(char s);
@@ -22,8 +23,7 @@ void makeTree(BST<std::string>& tree, const char* source) {
     while (input.get(cur_char)) {
         if (isEnglish(cur_char)) {
             buffer.push_back(con_to_low(cur_char));
-        }
-        else {
+    } else {
             if (!buffer.empty()) {
                 tree.insert(buffer);
                 buffer.clear();
